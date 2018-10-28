@@ -1,3 +1,12 @@
+//Deployment and configuration is contained in server/. You must cp server/.env-keep server/.env then set an APP_SECRET in there, used for generating JWTs.
+Application code is contained in lib/.
+It runs under sqlite3, which is installed during npm install.
+The database is keyed off of the NODE_ENV, and persisted to the filesystem at .{env}.db within the project's root directory. So NODE_ENV=production is persisted to .production.db, NODE_ENV=development to .development.db, and a missing NODE_ENV to .default.db.
+npm test runs tests and npm start runs the server.//
+
+
+
+
 # ![RealWorld Example App](.github/logo.png)
 
 > ### hapi pal codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
